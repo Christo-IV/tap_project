@@ -1,18 +1,26 @@
+:root {
+    --primary-color: white;
+    --secondary-color: lightgray;
+    --bg-color: rgb(42,42,42);
+    --nav-color: rgb(30,30,30);
+    --error-color: crimson;
+}
+
 * {
     font-family: Candara;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: white;
+    color: var(--primary-color);
 }
 
 body {
-    background-color: rgb(42,42,42);
+    background-color: var(--bg-color);
 }
 
 nav {
     width: 100vw;
-    background-color: rgb(30,30,30);
+    background-color: var(--nav-color);
     padding: 1rem 0;
     text-align: center;
     margin-bottom: 2rem;
@@ -29,27 +37,49 @@ nav {
 }
 
 .container h1 {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
 
 .content {
     font-size: 1.1rem;
     font-style: italic;
-    color: lightgray;
+    color: var(--secondary-color);
     padding-top: 1rem;
 }
 
 .error {
-    color: crimson;
+    color: var(--error-color);
     font-weight: bold;
     border-width: 2px 0;
     border-style: solid;
     border-color: inherit;
     padding: 1px 10px;
-    text-shadow: crimson 0 0 2px;
+    text-shadow: var(--error-color) 0 0 2px;
 }
 
 .error-msg {
     margin: 0.4rem 0;
+}
+
+.providers-table {
+    width: 100%;
+}
+
+.providers-table,
+.table-head,
+.table-data {
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+
+.table-head {
+    font-size: 1.2rem;
+    padding: 7px 10px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.table-data {
+    padding: 4px 10px;
 }
