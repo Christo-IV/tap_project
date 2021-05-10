@@ -54,7 +54,9 @@ The project is divided into two main folders: `app/` and `public/`.
 - **Billie Thompson** - *Provided README Template* -
   [PurpleBooth](https://github.com/PurpleBooth)
 - **Christo IV** - *Shamelessly copied code* -
-  [Christo-IV](https://github.com/Christo-IV)  
+  [Christo-IV](https://github.com/Christo-IV)
+- **Sander Paasalu** - *Was around and did stuff* -
+  [Sander-Paasalu](https://github.com/SanderPaasalu)
 
 See also the list of
 [contributors](https://github.com/Christo-IV/raamistik/contributors)
