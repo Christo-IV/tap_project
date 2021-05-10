@@ -13,7 +13,9 @@
                     <td class="table-data">'.$provider->name.'</td>
                     <td class="table-data">'.$provider->email.'</td>
                     <td class="table-data">'.$provider->phone_number.'</td>
+                    <td class="table-data">'.$provider->location.'</td>
                     <td class="table-data">'.$provider->comment.'</td>
+                    
                   </tr>';
         }?>
     </table>
