@@ -30,7 +30,7 @@ class Users extends Controller
              }
              if(empty($data['email'])){
                  $data['email_err'] = 'Please enter the email';
-             } else if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+             } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
                  $data['email_err'] = 'Please enter valid email';
              }// This might not be working correctly currelty
                 else if ($this->usersModel->findUserByEmail($data['email'])){
@@ -48,6 +48,7 @@ class Users extends Controller
              }else if ($data['password'] !== $data['confirm_password']) {
                  $data['confirm_password_err'] = 'Passwords must match!!!!<:(>';
              };
+            $this->view('users/register', $data);
         } else {
             $data = array(
                 'name' => '',
