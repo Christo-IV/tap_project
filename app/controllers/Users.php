@@ -47,7 +47,7 @@ class Users extends Controller
                  $data['confirm_password_err'] = 'Password must be at least 6 characters long';
              }else if ($data['password'] !== $data['confirm_password']) {
                  $data['confirm_password_err'] = 'Passwords must match!!!!<:(>';
-             }f
+             };
         } else {
             $data = array(
                 'name' => '',
