@@ -27,7 +27,7 @@ class Database
         }
         catch (PDOException $e) {
             $this->error = $e->getMessage();
-            echo '<p class="error-msg"><span class="error">Error:</span> '.$this->error.'</p>';
+            echo $this->error;
         }
     }
 

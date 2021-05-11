@@ -5,6 +5,7 @@
             <th class="table-head">Name</th>
             <th class="table-head">Email</th>
             <th class="table-head">Phone number</th>
+            <th class="table-head">Location</th>
             <th class="table-head">comment</th>
         </tr>
         <?php foreach($data as $provider) {
@@ -15,7 +16,6 @@
                     <td class="table-data">'.$provider->phone_number.'</td>
                     <td class="table-data">'.$provider->location.'</td>
                     <td class="table-data">'.$provider->comment.'</td>
-                    
                   </tr>';
         }?>
     </table>
