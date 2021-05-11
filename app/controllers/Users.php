@@ -47,12 +47,20 @@ class Users extends Controller
                  $data['confirm_password_err'] = 'Password must be at least 6 characters long';
              }else if ($data['password'] !== $data['confirm_password']) {
                  $data['confirm_password_err'] = 'Passwords must match!!!!<:(>';
-             }
-             $this->view('users/register', $data);
+             }f
         } else {
-            $this->view('users/register');
+            $data = array(
+                'name' => '',
+                'email' => '',
+                'password' => '',
+                'confirm_password' => '',
+                'name_err' => '',
+                'email_err' => '',
+                'password_err' => '',
+                'confirm_password_err' => ''
+            );
         }
-
+        $this->view('users/register', $data);
     }
 
     public function login() {
