@@ -32,7 +32,8 @@ class Users extends Controller
                  $data['email_err'] = 'Please enter the email';
              } else if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
                  $data['email_err'] = 'Please enter valid email';
-             }else if ($this->usersModel->findUserByEmail($data['email'])){
+             }// This might not be working correctly currelty
+                else if ($this->usersModel->findUserByEmail($data['email'])){
                  $data['email_err'] = 'Email is already taken';
              }
              if(empty($data['password'])){
@@ -45,8 +46,9 @@ class Users extends Controller
              } else if (strlen($data['confirm_password']) < 6) {
                  $data['confirm_password_err'] = 'Password must be at least 6 characters long';
              }else if ($data['password'] !== $data['confirm_password']) {
-                 $data['confirm_password_err'] = 'Password must be at least 6 characters long';
+                 $data['confirm_password_err'] = 'Passwords must match!!!!<:(>';
              }
+             $this->view('users/register', $data);
         } else {
             $this->view('users/register');
         }
