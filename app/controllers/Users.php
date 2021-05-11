@@ -30,12 +30,22 @@ class Users extends Controller
              }
              if(empty($data['email'])){
                  $data['email_err'] = 'Please enter the email';
+             } else if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+                 $data['email_err'] = 'Please enter valid email';
+             }else if ($this->usersModel->findUserByEmail($data['email'])){
+                 $data['email_err'] = 'Email is already taken';
              }
              if(empty($data['password'])){
                  $data['password_err'] = 'Please enter the password';
+             } else if (strlen($data['password']) < 6) {
+                 $data['password_err'] = 'Password must be at least 6 characters long';
              }
              if(empty($data['confirm_password'])){
                  $data['confirm_password_err'] = 'Please confirm password';
+             } else if (strlen($data['confirm_password']) < 6) {
+                 $data['confirm_password_err'] = 'Password must be at least 6 characters long';
+             }else if ($data['password'] !== $data['confirm_password']) {
+                 $data['confirm_password_err'] = 'Password must be at least 6 characters long';
              }
         } else {
             $this->view('users/register');
