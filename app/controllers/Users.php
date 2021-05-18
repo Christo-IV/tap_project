@@ -11,6 +11,14 @@ class Users extends Controller
         $this->usersModel = $this->model('User');
     }
 
+    public function getAllUsers() {
+        $data = $this->usersModel->getusers();
+
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
+
     public function register() {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             print_r($_POST['email']);
@@ -49,6 +57,16 @@ class Users extends Controller
                  $data['confirm_password_err'] = 'Passwords must match!!!!<:(>';
              };
             $this->view('users/register', $data);
+            if(empty($data['name_err']) and empty($data['email_err']) and empty($data['password_err']) and empty($data['confirm_password_err'])) {
+                echo 'aaa'.$this->usersModel->findUserByEmail($data['email']);
+                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                // Redirect to login
+                if($this->usersModel->register($data['name'], $data['email'], $data['password'])) {
+                    header('Location: '.URLROOT.'/'.'users/login');
+                } else {
+                    die('Something went wrong, oopsie');
+                }
+            }
         } else {
             $data = array(
                 'name' => '',
