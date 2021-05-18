@@ -24,48 +24,52 @@ class Database
         );
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e){
             $this->error = $e->getMessage();
-            echo $this->error;
+            echo $this->error.'<br>';
         }
     }
 
-    public function query($sql) {
+    public function query($sql){
         $this->stmt = $this->dbh->prepare($sql);
     }
 
-    public function bind($param, $value, $type=null) {
-        if(is_null($type)) {
-            switch (true) {
+    public function bind($param, $value, $type=null){
+        if(is_null($type)){
+            switch (true){
                 case is_int($value):
-                    $type = PFO::PARAM_INT;
+                    $type = PDO::PARAM_INT;
                     break;
                 case is_bool($value):
                     $type = PDO::PARAM_BOOL;
                     break;
-                case is_null($value)  :
+                case is_null($value):
+                    $type = PDO::PARAM_NULL;
+                    break;
+                default:
                     $type = PDO::PARAM_STR;
             }
         }
         $this->stmt->bindParam($param, $value, $type);
     }
 
-    public function execute() {
+    public function execute(){
         return $this->stmt->execute();
     }
 
-    public function getOne() {
+    public function getOne()
+    {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_OBJ);
     }
 
-    public function getAll() {
+    public function getAll()
+    {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function rowCount() {
+    public function rowCount(){
         return $this->stmt->rowCount();
     }
 }
