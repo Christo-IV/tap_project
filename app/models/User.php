@@ -35,19 +35,14 @@ class User
                 email=:email,
                 password=:password
         ');
-        $this->db->bind(':name', $name);
-        $this->db->bind(':email', $email);
-        $this->db->bind(':password', $password);
+        $this->db->bind('name', $name);
+        $this->db->bind('email', $email);
+        $this->db->bind('password', $password);
 
         if($this->db->execute()) {
             return true;
         } else {
             return false;
         }
-    }
-
-    public function getUsers() {
-        $this->db->query('SELECT * FROM users');
-        return $this->db->getAll();
     }
 }
