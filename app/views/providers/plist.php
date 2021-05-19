@@ -9,11 +9,12 @@
             <th scope="col">Phone num.</th>
             <th scope="col">Location</th>
             <th scope="col">Comment</th>
+            <th scope="col">Remove</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <button type="button" class="btn btn-success">Add new</button>
+            <button type="button" class="btn btn-success"><a>Add new</a></button>
         </tr>
 <?php foreach ($data as $provider) {
     echo '<tr>
