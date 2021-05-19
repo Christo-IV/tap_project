@@ -25,7 +25,7 @@
                   <td>' . $provider->location . '</td>
                   <td>' . $provider->comment . '</td>
                   <form method="post">
-                    <td><input type="submit" class="btn btn-danger" value="'.$provider->id.'"></td>
+                    <td><input type="submit" name="submit" class="btn btn-danger" value="'.$provider->id.'"></td>
                   </form>
                   </tr>';
         } ?>
