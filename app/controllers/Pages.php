@@ -17,6 +17,7 @@ class Pages extends Controller
             'title' => 'Welcome to the internet!',
             'content' => 'Lorem ipsum lorem');
         $this->view('pages/index', $data);
+        print_r($_SESSION);
     }
 
     /*

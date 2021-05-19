@@ -11,5 +11,10 @@
 <body>
     <nav>
         <h1 class="title"><?php echo ucfirst(PROJECT_NAME); ?></h1>
+        <ul>
+            <li>
+                <a href="users/login">Log in</a>
+            </li>
+        </ul>
     </nav>
     <div class="container">

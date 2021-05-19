@@ -78,9 +78,52 @@ class Users extends Controller
     }
 
     public function login() {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            print_r($_POST['email']);
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = array(
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
+                'email_err' => '',
+                'password_err' => ''
+            );
+            if(empty($data['email'])){
+                $data['email_err'] = 'Please enter the email';
+            } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+                $data['email_err'] = 'Please enter valid email';
+            }// This might not be working correctly currelty
+            else if (!$this->usersModel->findUserByEmail($data['email'])){
+                $data['email_err'] = 'User not found';
+            }
+            if(empty($data['password'])){
+                $data['password_err'] = 'Please enter the password';
+            }
 
-        $this->view('users/login');
-        message('register_success', '');
-        print_r($_SESSION);
+            if(empty($data['email_err']) and empty($data['password_err'])) {
+                $loggedUser = $this->usersModel->login($data['email'], $data['password']);
+                if($loggedUser) {
+                    $this->createUserSession($loggedUser);
+                    header('Location: '.URLROOT.'/'.'pages/index');
+                }
+                else {
+                    $data['password_err'] = 'Password is incorrect';
+                    $this->view('users/login', $data);
+                }
+            }
+        } else {
+            $data = array(
+                'email' => '',
+                'password' => '',
+                'email_err' => '',
+                'password_err' => ''
+            );
+        }
+        $this->view('users/login', $data);
+    }
+
+    public function createUserSession($user) {
+        $_SESSION['user_id'] = $user->id;
+        $_SESSION['user_name'] = $user->name;
+        $_SESSION['user_email'] = $user->email;
     }
 }
