@@ -13,7 +13,6 @@ class Users extends Controller
 
     public function register() {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            print_r($_POST['email']);
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = array(
                 'name' => trim($_POST['name']),
@@ -53,11 +52,10 @@ class Users extends Controller
             if(empty($data['name_err']) and empty($data['email_err']) and empty($data['password_err']) and empty($data['confirm_password_err'])) {
 
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-                print_r($data);
                 // Redirect to login
                 if($this->usersModel->register($data['name'], $data['email'], $data['password'])) {
                     message('register_success', 'You are registered and can now log in', 'alert alert-danger');
-                    header('Location: '.URLROOT.'/'.'users/login');
+                    redirect('users/login');
                 } else {
                     die('Something went wrong, oopsie');
                 }
@@ -79,7 +77,6 @@ class Users extends Controller
 
     public function login() {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            print_r($_POST['email']);
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = array(
                 'email' => trim($_POST['email']),
@@ -103,7 +100,7 @@ class Users extends Controller
                 $loggedUser = $this->usersModel->login($data['email'], $data['password']);
                 if($loggedUser) {
                     $this->createUserSession($loggedUser);
-                    header('Location: '.URLROOT.'/'.'pages/index');
+                    redirect('pages/index');
                 }
                 else {
                     $data['password_err'] = 'Password is incorrect';
@@ -119,6 +116,12 @@ class Users extends Controller
             );
         }
         $this->view('users/login', $data);
+    }
+
+    public function logout() {
+        session_unset();
+        session_destroy();
+        redirect('users/login');
     }
 
     public function createUserSession($user) {

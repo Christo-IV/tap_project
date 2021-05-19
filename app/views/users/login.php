@@ -21,7 +21,7 @@
                             <span class="invalid-feedback"><?php echo $data['password_err'];?></span>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-success btn-lg float-right" type="Submit">Register</button>
+                            <button class="btn btn-success btn-lg float-right" type="Submit">Log in</button>
                         </div>
                     </form>
                 </div>
