@@ -6,15 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/style.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title><?php echo PROJECT_NAME ?></title>
 </head>
 <body>
-    <nav>
-        <h1 class="title"><?php echo ucfirst(PROJECT_NAME); ?></h1>
-        <ul>
-            <li>
-                <a href="users/login">Log in</a>
-            </li>
-        </ul>
-    </nav>
     <div class="container">
