@@ -11,26 +11,26 @@
                     <form class="form" role="form" method="post" action="<?php echo URLROOT.'/providers/add'?>">
                         <div class="form-group">
                             <label for="name">Name<sup>*</sup></label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<?php  //echo $data['name'];?>">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<?php  //echo $data['name'];?>" required>
 
                         </div>
                         <div class="form-group">
                             <label for="email">Email<sup>*</sup></label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?php  //echo $data['name'];?>">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php  //echo $data['name'];?>" required>
                             <span class="invalid-feedback"></span>
                         </div>
                         <div class="form-group">
                             <label for="phone_number">Phone number<sup>*</sup></label>
-                            <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="+372" <?php // echo $data['phone_number_err'];?>>
+                            <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="+372" <?php // echo $data['phone_number_err'];?> required>
                             <span class="invalid-feedback"></span>
                         </div>
                         <div class="form-group">
                             <label for="speciality">Speciality<sup>*</sup></label>
-                            <input type="text" class="form-control" id="speciality" name="speciality" placeholder="Speciality" value="<?php  //echo $data['name'];?>">
+                            <input type="text" class="form-control" id="speciality" name="speciality" placeholder="Speciality" value="<?php  //echo $data['name'];?>" required>
                         </div>
                         <div class="form-group">
                             <label for="location">Location<sup>*</sup></label>
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Location" value="<?php  //echo $data['name'];?>">
+                            <input type="text" class="form-control" id="location" name="location" placeholder="Location" value="<?php  //echo $data['name'];?>" required>
                         </div>
                         <div class="form-group">
                             <label for="comment">Comment</label>

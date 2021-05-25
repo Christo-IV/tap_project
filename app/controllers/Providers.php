@@ -45,7 +45,7 @@ class Providers extends Controller
                 'comment' => trim($_POST['comment'])
             );
 
-            $this->providersModel->addProvider($data['name'], $data['email'], $data['speciality'], $data['phone_number'], $data['location'], $data['comment']);
+            $this->providersModel->addProvider($data['name'], $data['email'], $data['phone_number'], $data['speciality'], $data['location'], $data['comment']);
             $this->view('providers/add', $data);
         } else {
             $data= array();
