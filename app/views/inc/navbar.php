@@ -10,12 +10,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>/providers/plist">Providers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>/contracts/clist">Contracts</a>
-                </li>
+
                 <?php if (isset($_SESSION['user_id'])) : ?>
                     <li class="nav-item">
                         <?php echo $_SESSION['user_name']; ?>
