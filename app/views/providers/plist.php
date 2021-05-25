@@ -14,7 +14,7 @@
         </thead>
         <tbody>
         <tr>
-            <button type="button" class="btn btn-success"><a>Add new</a></button>
+            <button type="button" class="btn btn-success"><a href="<?php echo URLROOT; ?>/providers/add" >Add new</a></button>
         </tr>
 <?php foreach ($data as $provider) {
     echo '<tr>
