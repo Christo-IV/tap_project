@@ -49,3 +49,57 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Loomise aeg: Mai 25, 2021 kell 09:14 EL
+-- Serveri versioon: 10.4.18-MariaDB
+-- PHP versioon: 7.4.18
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Andmebaas: `kpr`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `contracts`
+--
+
+DROP TABLE IF EXISTS `contracts`;
+CREATE TABLE IF NOT EXISTS `contracts` (
+    `contract_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `provider_id` int(10) UNSIGNED NOT NULL,
+    `customer_phone` varchar(14) NOT NULL,
+    `customer_email` varchar(255) NOT NULL,
+    `Task` varchar(255) NOT NULL,
+    `Money` decimal(15,2) NOT NULL,
+    `Location` varchar(255) NOT NULL,
+    `customer_name` varchar(255) NOT NULL,
+    PRIMARY KEY (`contract_id`),
+    KEY `provider_id` (`provider_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- TABELI SEOSED `contracts`:
+--   `provider_id`
+--       `providers` -> `id`
+--
+
+--
+-- Tõmmistatud tabelite piirangud
+--
+
+--
+-- Piirangud tabelile `contracts`
+--
+ALTER TABLE `contracts`
+    ADD CONSTRAINT `contracts_ibfk_1` FOREIGN KEY (`provider_id`) REFERENCES `providers` (`id`);
+COMMIT;
