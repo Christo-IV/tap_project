@@ -15,19 +15,20 @@
     </thead>
     <tbody>
     <tr>
-        <button type="button" class="btn btn-success"><a>Add new</a></button>
+        <button type="button" class="btn btn-success"><a href="<?php echo URLROOT; ?>/contracts/add">Add new</a></button>
     </tr>
     <?php foreach ($data as $contract) {
         echo '<tr>
-                  <th id="' . $contract->id . '">' . $contract->id . '</th>
-                  <td>' . $contract->speciality . '</td>
-                  <td>' . $contract->name . '</td>
-                  <td>' . $contract->email . '</td>
-                  <td>' . $contract->phone_number . '</td>
+                  <th id="' . $contract->contract_id . '">' . $contract->contract_id . '</th>
+                  <td>' . $contract->provider_id . '</td>
+                  <td>' . $contract->customer_name . '</td>
+                  <td>' . $contract->customer_email . '</td>
+                  <td>' . $contract->customer_phone . '</td>
                   <td>' . $contract->location . '</td>
-                  <td>' . $contract->comment . '</td>
+                  <td>' . $contract->task . '</td>
+                  <td>' . $contract->money . '</td>
                   <form method="post">
-                    <td><input type="submit" name="submit" class="btn btn-danger" value="'.$contract->id.'"></td>
+                    <td><input type="submit" name="submit" class="btn btn-danger" value="'.$contract->contract_id.'"></td>
                   </form>
                   </tr>';
     } ?>

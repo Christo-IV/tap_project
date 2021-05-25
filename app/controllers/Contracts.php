@@ -15,21 +15,21 @@ class Contracts extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            echo '<pre>';
+            /*echo '<pre>';
             print_r($_POST);
-            echo '</pre>';
+            echo '</pre>';*/
             $id = $_POST['submit'];
             $this->remove($id);
         }
 
-        $data = $this->contractsModel->getProviders();
+        $data = $this->contractsModel->getContracts();
 
         $this->view("contracts/clist", $data);
     }
 
     public function remove($id)
     {
-        $this->contractsModel->removeProvider($id);
+        $this->contractsModel->removeContract($id);
     }
 
     public function add()
@@ -37,15 +37,16 @@ class Contracts extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = array(
-                'name' => trim($_POST['name']),
-                'email' => trim($_POST['email']),
-                'speciality' => trim($_POST['speciality']),
-                'phone_number' => trim($_POST['phone_number']),
-                'location' => trim($_POST['location']),
-                'comment' => trim($_POST['comment'])
+                'provider' => trim($_POST['provider']),
+                'customer_name' => trim($_POST['customer_name']),
+                'customer_email' => trim($_POST['customer_email']),
+                'customer_phone' => trim($_POST['customer_phone']),
+                'task' => trim($_POST['task']),
+                'money' => trim($_POST['money']),
+                'location' => trim($_POST['location'])
             );
 
-            $this->contractsModel->addContract($data['name'], $data['email'], $data['phone_number'], $data['speciality'], $data['location'], $data['comment']);
+            $this->contractsModel->addContract($data['provider'], $data['customer_name'], $data['customer_email'], $data['customer_phone'], $data['task'], $data['location'], $data['money']);
             $this->view('contracts/add', $data);
         } else {
             $data= array();
