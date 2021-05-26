@@ -4,12 +4,12 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Customer Name</th>
+        <th scope="col">Provider</th>
         <th scope="col">Customer Email</th>
         <th scope="col">Customer Phone</th>
-        <th scope="col">Who will provide</th>
         <th scope="col">Location</th>
-        <th scope="col">Money</th>
         <th scope="col">Task</th>
+        <th scope="col">Money</th>
         <th scope="col">Remove</th>
     </tr>
     </thead>
@@ -20,8 +20,8 @@
     <?php foreach ($data as $contract) {
         echo '<tr>
                   <th id="' . $contract->contract_id . '">' . $contract->contract_id . '</th>
-                  <td>' . $contract->provider_id . '</td>
                   <td>' . $contract->customer_name . '</td>
+                  <td>' . $contract->provider_id . '</td>
                   <td>' . $contract->customer_email . '</td>
                   <td>' . $contract->customer_phone . '</td>
                   <td>' . $contract->location . '</td>
