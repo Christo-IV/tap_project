@@ -9,7 +9,6 @@
             <th scope="col">Phone num.</th>
             <th scope="col">Location</th>
             <th scope="col">Comment</th>
-            <th scope="col">Remove</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +25,7 @@
                   <td>' . $provider->location . '</td>
                   <td>' . $provider->comment . '</td>
                   <form method="post">
-                    <td><input type="submit" name="submit" class="btn btn-danger" value="'.$provider->id.'"></td>
+                    <td><button type="submit" name="provider" value="'.$provider->id.'" class="btn btn-danger">&#9747;</button></td>
                   </form>
                   </tr>';
         } ?>

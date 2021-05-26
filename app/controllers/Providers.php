@@ -15,7 +15,7 @@ class Providers extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $id = $_POST['submit'];
+            $id = $_POST['provider'];
             $this->remove($id);
         }
 

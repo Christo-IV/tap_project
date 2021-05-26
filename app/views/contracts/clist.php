@@ -10,7 +10,6 @@
         <th scope="col">Location</th>
         <th scope="col">Task</th>
         <th scope="col">Money</th>
-        <th scope="col">Remove</th>
     </tr>
     </thead>
     <tbody>
@@ -28,7 +27,7 @@
                   <td>' . $contract->task . '</td>
                   <td>' . $contract->money . '</td>
                   <form method="post">
-                    <td><input type="submit" name="submit" class="btn btn-danger" value="'.$contract->contract_id.'"></td>
+                    <td><button type="submit" name="contract" value="'.$contract->contract_id.'" class="btn btn-danger">&#9747;</button></td>
                   </form>
                   </tr>';
     } ?>

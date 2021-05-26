@@ -15,10 +15,12 @@ class Contracts extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            /*echo '<pre>';
+            /*
+            echo '<pre>';
             print_r($_POST);
-            echo '</pre>';*/
-            $id = $_POST['submit'];
+            echo '</pre>';
+            */
+            $id = $_POST['contract'];
             $this->remove($id);
         }
 
