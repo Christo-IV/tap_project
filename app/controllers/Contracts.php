@@ -46,7 +46,6 @@ class Contracts extends Controller
                 'location' => trim($_POST['location'])
             );
 
-            // $provider ,$customer_name, $customer_email, $customer_phone, $task, $location, $money
             $this->contractsModel->addContract(
                 $data['provider'],
                 $data['customer_name'],
@@ -56,7 +55,7 @@ class Contracts extends Controller
                 $data['location'],
                 $data['money']
             );
-            $this->view('contracts/add', $data);
+            redirect('contracts/clist');
         } else {
             $data= array();
             $this->view('contracts/add', $data);
