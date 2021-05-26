@@ -19,9 +19,9 @@
 <?php foreach ($data as $provider) {
     echo '<tr>
                   <th id="' . $provider->id . '">' . $provider->id . '</th>
-                  <td>' . $provider->speciality . '</td>
                   <td>' . $provider->name . '</td>
                   <td>' . $provider->email . '</td>
+                  <td>' . $provider->speciality . '</td>
                   <td>' . $provider->phone_number . '</td>
                   <td>' . $provider->location . '</td>
                   <td>' . $provider->comment . '</td>
