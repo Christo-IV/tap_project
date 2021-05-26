@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group">
                             <label for="task">Task<sup>*</sup></label>
-                            <input type="text" class="form-control" id="task" name="task" placeholder="Speciality" value="<?php  //echo $data['name'];?>" required>
+                            <input type="text" class="form-control" id="task" name="task" placeholder="Task" value="<?php  //echo $data['name'];?>" required>
                         </div>
                         <div class="form-group">
                             <label for="location">Location<sup>*</sup></label>
