@@ -43,7 +43,8 @@ class Providers extends Controller
             );
 
             $this->providersModel->addProvider($data['name'], $data['email'], $data['phone_number'], $data['speciality'], $data['location'], $data['comment']);
-            $this->view('providers/add', $data);
+            //$this->view('providers/add', $data);
+            redirect('providers/plist');
         } else {
             $data= array();
             $this->view('providers/add', $data);
