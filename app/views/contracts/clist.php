@@ -15,7 +15,7 @@
     </thead>
     <tbody>
     <tr>
-        <button type="button" class="btn btn-success"><a href="<?php echo URLROOT; ?>/contracts/add">Add new</a></button>
+        <a href="<?php echo URLROOT; ?>/contracts/add" type="button" class="btn btn-success">Add new</a>
     </tr>
     <?php foreach ($data as $contract) {
         echo '<tr>
