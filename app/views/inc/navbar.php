@@ -7,23 +7,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <!--
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>">Home</a>
+                    <a class="nav-link" aria-current="page" href="<?php echo URLROOT; ?>">Home</a>
                 </li>
+                -->
 
                 <?php if (isset($_SESSION['user_id'])) : ?>
-                    <li class="nav-item">
+                    <li class="nav-item nav-link active">
                         <?php echo $_SESSION['user_name']; ?>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
+                        <a class="nav-link" aria-current="page" href="<?php echo URLROOT; ?>/providers/plist">Providers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?php echo URLROOT; ?>/contracts/clist">Contracts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page"
                            href="<?php echo URLROOT; ?>/users/logout">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>/providers/plist">Providers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>/contracts/clist">Contracts</a>
                     </li>
                 <?php else: ?>
                 <li class="nav-item">
