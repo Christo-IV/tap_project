@@ -13,15 +13,34 @@ class Providers extends Controller
 
     public function plist()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $id = $_POST['provider'];
-            $this->providersModel->removeProvider($id);
-        }
-
         $data = $this->providersModel->getProviders();
 
-        $this->view("providers/plist", $data);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            if(array_key_exists('remove', $_POST)) {
+                $id = $_POST['remove'];
+                $this->providersModel->removeProvider($id);
+                $data = $this->providersModel->getProviders();
+            } else {
+                switch ($_POST['header']) {
+                    case 'provider_id':
+                    case 'phone_number':
+                        $data = sortNum($data, $_POST['header']);
+                        break;
+                    case 'name':
+                    case 'email':
+                    case 'location':
+                    case 'task':
+                    case 'comment':
+                        $data = sortStr($data, $_POST['header']);
+                        break;
+                }
+            }
+        }
+
+
+        $this->view('providers/plist', $data);
     }
 
     public function add()
