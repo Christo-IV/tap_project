@@ -1,71 +1,10 @@
-:root {
-    --primary-color: black;
-    --secondary-color: lightgray;
-    --bg-color: rgb(240,240,240);
-    --nav-color: rgb(30,30,30);
+#table-header-btn {
+    background-color: transparent !important;
+    border: 0 solid transparent !important;
+    font-weight: bold;
+    transition-duration: 0.2s;
 }
 
-* {
-    font-family: "Calibri Light";
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    color: var(--primary-color);
-}
-
-body {
-    background-color: var(--bg-color);
-}
-
-nav {
-    width: 100vw;
-    background-color: var(--nav-color);
-    padding: 1rem 0;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.title {
-    font-family: Cambria;
-}
-
-.container {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 1200px;
-}
-
-.container h1 {
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-}
-
-.content {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: var(--secondary-color);
-    padding-top: 1rem;
-}
-
-.providers-table {
-    width: 100%;
-}
-
-.providers-table,
-.table-data {
-    border-width: 2px 0;
-    border-style: solid;
-    border-color: var(--primary-color);
-    border-collapse: collapse;
-}
-
-.table-head {
-    font-size: 1.2rem;
-    padding: 7px 10px;
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-}
-
-.table-data {
-    padding: 4px 10px;
+#table-header-btn:hover {
+    opacity: 0.65;
 }

@@ -8,6 +8,7 @@ require_once 'config/constants.php';
 // helpers
 require_once 'helpers/session_helper.php';
 require_once 'helpers/url_helper.php';
+require_once 'helpers/data_helper.php';
 
 // load libraries
 require_once 'libs/Core.php';

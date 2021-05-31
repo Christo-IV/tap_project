@@ -13,6 +13,8 @@ class Contracts extends Controller
 
     public function clist()
     {
+        $data = $this->contractsModel->getContracts();
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             /*
@@ -20,11 +22,26 @@ class Contracts extends Controller
             print_r($_POST);
             echo '</pre>';
             */
-            $id = $_POST['contract'];
-            $this->contractsModel->removeContract($id);
+            if(array_key_exists('remove', $_POST)) {
+                $id = $_POST['remove'];
+                $this->contractsModel->removeContract($id);
+                $data = $this->contractsModel->getContracts();
+            } else {
+                switch ($_POST['header']) {
+                    case 'contract_id':
+                    case 'provider':
+                    case 'customer_phone':
+                    case 'money':
+                        break;
+                    case 'customer_name':
+                    case 'customer_email':
+                    case 'location':
+                    case 'task':
+                        $data = sortStr($data, $_POST['header']);
+                        break;
+                }
+            }
         }
-
-        $data = $this->contractsModel->getContracts();
 
         $this->view("contracts/clist", $data);
     }
