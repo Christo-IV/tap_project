@@ -32,6 +32,7 @@ class Contracts extends Controller
                     case 'provider':
                     case 'customer_phone':
                     case 'money':
+                        $data = sortNum($data, $_POST['header']);
                         break;
                     case 'customer_name':
                     case 'customer_email':
