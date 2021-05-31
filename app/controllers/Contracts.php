@@ -29,7 +29,7 @@ class Contracts extends Controller
             } else {
                 switch ($_POST['header']) {
                     case 'contract_id':
-                    case 'provider':
+                    case 'provider_id':
                     case 'customer_phone':
                     case 'money':
                         $data = sortNum($data, $_POST['header']);
