@@ -74,12 +74,20 @@
 
     <!-- Button for adding new contracts -->
     <tr>
-        <a href="<?php echo URLROOT; ?>/contracts/add" type="button" class="btn btn-success">Add new</a>
+        <a
+                href="<?php echo URLROOT; ?>/contracts/add"
+                type="button"
+                class="btn btn-success">Add new
+        </a>
     </tr>
 
     <!-- Button for viewing the table's history / log -->
     <tr>
-        <a href="<?php echo URLROOT; ?>/contracts/history" type="button" class="btn btn-success">History</a>
+        <a
+                href="<?php echo URLROOT; ?>/contracts/history"
+                type="button"
+                class="btn btn-success">History
+        </a>
     </tr>
 
     <!-- Inserting data into the table -->
