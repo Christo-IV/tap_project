@@ -3,14 +3,70 @@
     <thead>
     <tr>
         <form method="POST">
-            <th scope="col"><button name="header" value="contract_id" id="table-header-btn" type="submit">#</button></th>
-            <th scope="col"><button name="header" value="customer_name" id="table-header-btn" type="submit">Customer Name</button></th>
-            <th scope="col"><button name="header" value="provider_id" id="table-header-btn" type="submit">Provider</button></th>
-            <th scope="col"><button name="header" value="customer_email" id="table-header-btn" type="submit">Customer Email</button></th>
-            <th scope="col"><button name="header" value="customer_phone" id="table-header-btn" type="submit">Customer Phone</button></th>
-            <th scope="col"><button name="header" value="location" id="table-header-btn" type="submit">location</button></th>
-            <th scope="col"><button name="header" value="task" id="table-header-btn" type="submit">Task</button></th>
-            <th scope="col"><button name="header" value="money" id="table-header-btn" type="submit">Money</button></th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="contract_id"
+                        id="table-header-btn"
+                        type="submit">#
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="customer_name"
+                        id="table-header-btn"
+                        type="submit">Customer Name
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="provider_id"
+                        id="table-header-btn"
+                        type="submit">Provider
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="customer_email"
+                        id="table-header-btn"
+                        type="submit">Customer Email
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="customer_phone"
+                        id="table-header-btn"
+                        type="submit">Customer Phone
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="location"
+                        id="table-header-btn"
+                        type="submit">location
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="task"
+                        id="table-header-btn"
+                        type="submit">Task
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="money"
+                        id="table-header-btn"
+                        type="submit">Money
+                </button>
+            </th>
         </form>
     </tr>
     </thead>
