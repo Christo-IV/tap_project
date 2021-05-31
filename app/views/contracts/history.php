@@ -1,24 +1,73 @@
-<?php require_once APPROOT . '/views/inc/header_list.php' ?>
-<h1>Table of Histories</h1>
+<?php require_once APPROOT . '/views/inc/header.php' ?>
 <table id="list" class="table">
     <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">Customer Name</th>
-        <th scope="col">Provider</th>
-        <th scope="col">Customer Email</th>
-        <th scope="col">Customer Phone</th>
-        <th scope="col">Location</th>
-        <th scope="col">Task</th>
-        <th scope="col">Money</th>
+        <form method="POST">
+            <th scope="col">
+                <button
+                        name="header"
+                        value="customer_name"
+                        id="table-header-btn"
+                        type="submit">Customer Name
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="provider_id"
+                        id="table-header-btn"
+                        type="submit">Provider
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="customer_email"
+                        id="table-header-btn"
+                        type="submit">Customer Email
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="customer_phone"
+                        id="table-header-btn"
+                        type="submit">Customer Phone
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="location"
+                        id="table-header-btn"
+                        type="submit">location
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="task"
+                        id="table-header-btn"
+                        type="submit">Task
+                </button>
+            </th>
+            <th scope="col">
+                <button
+                        name="header"
+                        value="money"
+                        id="table-header-btn"
+                        type="submit">Money
+                </button>
+            </th>
+        </form>
     </tr>
     </thead>
     <tbody>
 
+    <!-- Inserting data into the table -->
     <?php
     foreach ($data as $contract) {
         echo '<tr>
-                  <th id="' . $contract->contract_id . '">' . $contract->contract_id . '</th>
                   <td>' . $contract->customer_name . '</td>
                   <td>' . $contract->provider_id . '</td>
                   <td>' . $contract->customer_email . '</td>
@@ -30,4 +79,4 @@
     } ?>
     </tbody>
 </table>
-<?php require_once APPROOT . '/views/inc/footer_list.php' ?>
+<?php require_once APPROOT . '/views/inc/footer.php' ?>

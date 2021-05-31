@@ -17,11 +17,6 @@ class Contracts extends Controller
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            /*
-            echo '<pre>';
-            print_r($_POST);
-            echo '</pre>';
-            */
             if(array_key_exists('remove', $_POST)) {
                 $id = $_POST['remove'];
                 $this->contractsModel->removeContract($id);
@@ -49,11 +44,24 @@ class Contracts extends Controller
 
     public function history()
     {
+        $data = $this->contractsModel->getLog();
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            switch ($_POST['header']) {
+                case 'contract_id':
+                case 'provider_id':
+                case 'customer_phone':
+                case 'money':
+                    $data = sortNum($data, $_POST['header']);
+                    break;
+                case 'customer_name':
+                case 'customer_email':
+                case 'location':
+                case 'task':
+                    $data = sortStr($data, $_POST['header']);
+                    break;
+            }
         }
-
-        $data = $this->contractsModel->getLog();
 
         $this->view("contracts/history", $data);
     }
