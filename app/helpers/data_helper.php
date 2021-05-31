@@ -14,9 +14,7 @@ function str($header) {
         $result = 1 * strcmp(strtoupper($a[$header]), strtoupper($b[$header]));
         return $result;
     };
-
-
-};
+}
 
 function sortStr($data, $header) {
 
@@ -24,7 +22,7 @@ function sortStr($data, $header) {
     return $data;
 }
 
-//
+// For numbers
 function num($header) {
     return function ($a, $b) use ($header) {
         $a = (array)$a;
@@ -35,9 +33,7 @@ function num($header) {
         }
         return ($a[$header] < $b[$header]) ? -1 : 1;
     };
-
-
-};
+}
 
 function sortNum($data, $header) {
 
