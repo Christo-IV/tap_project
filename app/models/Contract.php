@@ -48,4 +48,10 @@ class Contract
             return false;
         }
     }
+
+    public function getLog()
+    {
+        $this->db->query('SELECT * FROM log');
+        return $this->db->getAll();
+    }
 }

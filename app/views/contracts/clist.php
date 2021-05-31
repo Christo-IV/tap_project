@@ -3,7 +3,7 @@
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">Customer Name</th>k
+        <th scope="col">Customer Name</th>
         <th scope="col">Provider</th>
         <th scope="col">Customer Email</th>
         <th scope="col">Customer Phone</th>
@@ -15,6 +15,9 @@
     <tbody>
     <tr>
         <a href="<?php echo URLROOT; ?>/contracts/add" type="button" class="btn btn-success">Add new</a>
+    </tr>
+    <tr>
+        <a href="<?php echo URLROOT; ?>/contracts/history" type="button" class="btn btn-success">History</a>
     </tr>
 
     <?php

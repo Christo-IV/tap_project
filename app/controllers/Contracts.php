@@ -21,7 +21,7 @@ class Contracts extends Controller
             echo '</pre>';
             */
             $id = $_POST['contract'];
-            $this->remove($id);
+            $this->contractsModel->removeContract($id);
         }
 
         $data = $this->contractsModel->getContracts();
@@ -29,9 +29,15 @@ class Contracts extends Controller
         $this->view("contracts/clist", $data);
     }
 
-    public function remove($id)
+    public function history()
     {
-        $this->contractsModel->removeContract($id);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        }
+
+        $data = $this->contractsModel->getLog();
+
+        $this->view("contracts/history", $data);
     }
 
     public function add()
