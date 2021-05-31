@@ -5,7 +5,7 @@
         <form method="POST">
             <th scope="col"><button name="header" value="contract_id" id="table-header-btn" type="submit">#</button></th>
             <th scope="col"><button name="header" value="customer_name" id="table-header-btn" type="submit">Customer Name</button></th>
-            <th scope="col"><button name="header" value="provider" id="table-header-btn" type="submit">Provider</button></th>
+            <th scope="col"><button name="header" value="provider_id" id="table-header-btn" type="submit">Provider</button></th>
             <th scope="col"><button name="header" value="customer_email" id="table-header-btn" type="submit">Customer Email</button></th>
             <th scope="col"><button name="header" value="customer_phone" id="table-header-btn" type="submit">Customer Phone</button></th>
             <th scope="col"><button name="header" value="location" id="table-header-btn" type="submit">location</button></th>
@@ -15,52 +15,19 @@
     </tr>
     </thead>
     <tbody>
+
+    <!-- Button for adding new contracts -->
     <tr>
         <a href="<?php echo URLROOT; ?>/contracts/add" type="button" class="btn btn-success">Add new</a>
     </tr>
+
+    <!-- Button for viewing the table's history / log -->
     <tr>
         <a href="<?php echo URLROOT; ?>/contracts/history" type="button" class="btn btn-success">History</a>
     </tr>
 
+    <!-- Inserting data into the table -->
     <?php
-    /*
-    function cmp($a, $b)
-    {
-        /*
-        echo 'this is A <br>';
-        print_r($a);
-        echo '<br>';
-        echo 'this is B <br>';
-        print_r($b);
-        return strcmp($a->provider_id, $b->provider_id);
-        //print_r(func_get_args());
-        return strcmp($a->location, $b->location);
-    }
-    */
-
-    /*
-    echo 'Unsorted:';
-    echo '<pre>';
-    print_r($data);
-    echo '</pre>';
-    */
-/*
-    usort($data, function ($a, $b) {
-
-        echo 'Comparing '.$a->task.' and '.$b->task.'<br>';
-        echo $result.'<br>';
-
-        $result = -1 * strcmp(strtoupper($a->task), strtoupper($b->task));
-        return $result;
-    });
-*/
-    /*
-    echo 'Sorted:';
-    echo '<pre>';
-    print_r($sorted_data);
-    //print_r($data);
-    echo '</pre>';
-*/
     foreach ($data as $contract) {
         echo '<tr>
                   <th id="' . $contract->contract_id . '">' . $contract->contract_id . '</th>
