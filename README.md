@@ -4,7 +4,7 @@ A PHP based framework, which uses the MVC model.
 
 ## Getting Started
 
-These instructions will give you a copy of the project up and running on
+These instructions will get your copy of the project up and running on
 your local machine for development and testing purposes.
 
 ### Prerequisites
